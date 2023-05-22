@@ -6,6 +6,9 @@ import { ClienteCreateComponent } from './cliente-create/cliente-create.componen
 import { TerrestreComponent } from './terrestre/terrestre.component';
 import { TerrestreCreateComponent } from './terrestre-create/terrestre-create.component';
 import { TerrestreUpdateComponent } from './terrestre-update/terrestre-update.component';
+import { MaritimoComponent } from './maritimo/maritimo.component';
+import { MaritimoCreateComponent } from './maritimo-create/maritimo-create.component';
+import { MaritimoUpdateComponent } from './maritimo-update/maritimo-update.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -40,6 +43,23 @@ const routes: Routes = [
       {
         path: 'update',
         component: TerrestreUpdateComponent
+      }
+    ]
+  },
+  {
+    path: 'maritimo',
+    children: [
+      {
+        path: '',
+        component: MaritimoComponent
+      },
+      {
+        path: 'create',
+        component: MaritimoCreateComponent
+      },
+      {
+        path: 'update',
+        component: MaritimoUpdateComponent
       }
     ]
   }

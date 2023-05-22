@@ -1,0 +1,132 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+    <li class="breadcrumb-item"><a routerLink="/maritimo">Envios Maritimos</a></li>
+    <li class="breadcrumb-item active">Create</li>
+  </ol>
+</nav>
+
+
+<h2>{{ title }}</h2>
+<div>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div>
+      <label for="tipoProducto" >
+        Tipo de producto:
+      </label>
+      <input
+        id="tipoProducto"
+        type="text"
+        formControlName="tipoProducto"
+        required="required">
+    </div>
+
+    <div formGroupName="cliente">
+      <label for="cliente" >
+        Cliente:
+      </label>
+      <select id="cliente" formControlName="id" required="required">
+        <option *ngFor="let cliente of clientes" [value]="cliente.id"> {{ cliente.nombre }} </option>
+      </select>
+    </div>
+
+    <div>
+      <label for="cantidadProducto" >
+        Cantidad de producto:
+      </label>
+      <input
+        id="cantidadProducto"
+        type="number"
+        min="0"
+        formControlName="cantidadProducto"
+        required="required">
+    </div>
+
+    <div>
+      <label for="fechaRegistro" >
+        Fecha de registro:
+      </label>
+      <input
+        id="fechaRegistro"
+        type="text"
+        formControlName="fechaRegistro"
+        required="required">
+    </div>
+
+    <div>
+      <label for="fechaEntrega" >
+        Fecha de entrega:
+      </label>
+      <input
+        id="fechaEntrega"
+        type="text"
+        formControlName="fechaEntrega"
+        required="required">
+    </div>
+
+    <div>
+      <label for="precioEnvio" >
+        Precio de envio:
+      </label>
+      <input
+        id="precioEnvio"
+        type="number"
+        min="0"
+        formControlName="precioEnvio"
+        required="required">
+    </div>
+
+    <div>
+      <label for="numeroGuia" >
+        Numero de guia:
+      </label>
+      <input
+        id="numeroGuia"
+        type="text"
+        pattern="^[a-zA-Z0-9]{10}$"
+        formControlName="numeroGuia"
+        required="required">
+    </div>
+
+    <div>
+      <label for="precioOriginal" >
+        Precio original:
+      </label>
+      <input
+        id="precioOriginal"
+        type="number"
+        min="0"
+        formControlName="precioOriginal"
+        required="required">
+    </div>
+
+    <div>
+      <label for="puertoEntrega" >
+        Puerto de entrega:
+      </label>
+      <input
+        id="puertoEntrega"
+        type="text"
+        formControlName="puertoEntrega"
+        required="required">
+    </div>
+
+    <div>
+      <label for="numeroFlota" >
+        Numero de flota:
+      </label>
+      <input
+        id="numeroFlota"
+        type="text"
+        pattern="^[A-Za-z]{3}[0-9]{4}[A-Za-z]{1}$"
+        formControlName="numeroFlota"
+        required="required">
+    </div>
+
+    <button class="" [disabled]="!form.valid">Agregar envio maritimo</button>
+
+  </form>
+
+</div>
