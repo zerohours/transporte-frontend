@@ -14,7 +14,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class ClienteCreateComponent implements OnInit {
 
-  title = 'Listado de clientes';
+  title = 'Agregar cliente';
 
   loading = true;
 

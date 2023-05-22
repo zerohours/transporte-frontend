@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { ClienteCreateComponent } from './cliente-create/cliente-create.component';
+import { TerrestreComponent } from './terrestre/terrestre.component';
+import { TerrestreCreateComponent } from './terrestre-create/terrestre-create.component';
+import { TerrestreUpdateComponent } from './terrestre-update/terrestre-update.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -23,6 +26,23 @@ const routes: Routes = [
       }
     ],
   },
+  {
+    path: 'terrestre',
+    children: [
+      {
+        path: '',
+        component: TerrestreComponent
+      },
+      {
+        path: 'create',
+        component: TerrestreCreateComponent
+      },
+      {
+        path: 'update',
+        component: TerrestreUpdateComponent
+      }
+    ]
+  }
 ];
 
 @NgModule({
