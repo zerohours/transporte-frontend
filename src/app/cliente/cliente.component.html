@@ -1,0 +1,30 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+    <li class="breadcrumb-item active">Clientes</li>
+  </ol>
+</nav>
+
+<a [routerLink]="['/cliente/create']"  style="float: right" id="add">Agregar Cliente</a>
+
+<h2>{{ title }}</h2>
+<div *ngIf="loading">
+  <p>Loading...</p>
+</div>
+
+<div>
+
+  <table>
+    <thead>
+    <th>Id</th>
+    <th>Nombre</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cliente of clientes; index as i">
+      <td> {{ cliente.id }}</td>
+      <td> {{ cliente.nombre }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

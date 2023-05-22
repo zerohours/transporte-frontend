@@ -1,0 +1,28 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+    <li class="breadcrumb-item"><a routerLink="/cliente">Clientes</a></li>
+    <li class="breadcrumb-item active">Create</li>
+  </ol>
+</nav>
+
+<div>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div >
+      <label for="nombre" >
+        Nombre del cliente:
+      </label>
+      <input
+        id="nombre"
+        type="text"
+        formControlName="nombre"
+        required="required">
+    </div>
+
+    <button class="" [disabled]="!form.valid">Agregar cliente</button>
+
+  </form>
+
+</div>
