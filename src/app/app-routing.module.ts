@@ -9,12 +9,19 @@ import { TerrestreUpdateComponent } from './terrestre-update/terrestre-update.co
 import { MaritimoComponent } from './maritimo/maritimo.component';
 import { MaritimoCreateComponent } from './maritimo-create/maritimo-create.component';
 import { MaritimoUpdateComponent } from './maritimo-update/maritimo-update.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
+    canActivate: [AuthGuard],
     component: HomeComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'cliente',

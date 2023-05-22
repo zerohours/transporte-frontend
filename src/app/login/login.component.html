@@ -1,0 +1,33 @@
+
+<h2>{{ title }}</h2>
+<div>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div >
+      <label for="username" >
+        Nombre de usuario:
+      </label>
+      <input
+        id="username"
+        type="text"
+        formControlName="username"
+        required="required">
+    </div>
+
+    <div >
+      <label for="password" >
+        Password de usuario:
+      </label>
+      <input
+        id="password"
+        type="password"
+        formControlName="password"
+        required="required">
+    </div>
+
+    <button class="" [disabled]="!form.valid">Login</button>
+
+  </form>
+
+</div>
